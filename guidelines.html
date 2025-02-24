@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Guidelines</title>
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #f8f9fa;
+            --border-color: #e0e0e0;
+            --text-color: #333;
+        }
+
+        .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center; /* Center items vertically */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #0d6efd;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #0d6efd;
+}
+
+.nav-links a.active {
+  color: #0d6efd;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+  background-color: #0d6efd;
+}
+
+.submit-btn {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.submit-btn:hover {
+  background-color: #0b5ed7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(13, 110, 253, 0.2);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+      display: block;
+      z-index: 1000;
+  }
+
+  .nav-links {
+      display: none;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background-color: white;
+      padding: 1.5rem;
+      gap: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+      z-index: 1000;
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .nav-links li {
+      width: 100%;
+  }
+
+  .nav-links a {
+      display: block;
+      padding: 10px 0;
+      font-size: 1.1rem;
+  }
+
+  .submit-btn {
+      margin-top: 1rem;
+      width: 100%;
+      max-width: 300px;
+  }
+
+  /* Fade in animation for mobile menu items */
+  .nav-links.active li {
+      animation: fadeIn 0.5s ease forwards;
+      opacity: 0;
+  }
+
+  @keyframes fadeIn {
+      from {
+          opacity: 0;
+          transform: translateY(-10px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  /* Add delay for each menu item */
+  .nav-links.active li:nth-child(1) { animation-delay: 0.1s; }
+  .nav-links.active li:nth-child(2) { animation-delay: 0.2s; }
+  .nav-links.active li:nth-child(3) { animation-delay: 0.3s; }
+  .nav-links.active li:nth-child(4) { animation-delay: 0.4s; }
+  .nav-links.active li:nth-child(5) { animation-delay: 0.5s; }
+  .nav-links.active li:nth-child(6) { animation-delay: 0.6s; }
+  .nav-links.active li:nth-child(7) { animation-delay: 0.7s; }
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .section {
+            background: rgb(255, 255, 255);
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+        }
+
+        .download-button:hover {
+            background-color: #1557b0;
+        }
+
+        .important-note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d6eac8d6318cdfc985413a510a78cb1f4e978c5c11d256465b99482a7faa2454?placeholderIfAbsent=true&apiKey=853ff4038de94295b0edc4fbfd35ed23" alt="ICCSAI-2025">
+            <span class="logo-text">ICCSAI-2025</span>
+        </div>
+        
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="guidelines.html">Guidelines</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="https://ieeexplore.ieee.org/xpl/conhome/10420826/proceeding">ICCSAI-2023</a></li>
+            <li><a href="Registration.html">Registration</a></li>
+            <li><a href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FICCSAI2025">
+              <button class="submit-btn">Submit Paper</button>
+            </a></li>
+        </ul>
+    </nav>
+    <div class="header">
+        <h1>Conference Guidelines</h1>
+        <p>Important information for authors and presenters</p>
+    </div>
+
+    <div class="section">
+        <h2>Author's Guidelines</h2>
+        <p>Authors are invited to submit original, high-quality, and previously unpublished research articles. Submissions must not be under review by any other publication or conference. All manuscripts should be submitted electronically via Microsoft CMT in strict adherence to the IEEE standard two-column conference template.</p>
+        <div class="important-note">
+            <strong>Note:</strong> Each manuscript is limited to a maximum of six (6) pages, including figures, tables, and references. Additional pages may be accommodated with a nominal fee.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Paper Formatting Guidelines</h2>
+        <a href="https://www.ieee.org/conferences/publishing/templates.html" class="download-button">Download Template</a>
+        <ol>
+            <li>Paper Size: US Letter (8.5" x 11")</li>
+            <li>Paper Length: Maximum of 6 pages, including figures, tables, and references. Two additional pages are permitted with a charge of ₹ 1000 per page (Indian authors) or $50 per page (International authors)</li>
+            <li>Formatting: Double-column layout, single-spaced, using 10pt Times New Roman font</li>
+            <li>Margins: Top: 1" (25 mm) on the title page; 0.75" (19 mm) elsewhere. Left, Right, and Bottom margins: 0.75" (19 mm)</li>
+            <li>File Format: PDF, with a maximum size of 5MB. All fonts must be embedded</li>
+            <li>No page numbering should be included in the manuscript</li>
+            <li>Use the IEEE MS Word template provided via the link above for proper formatting</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>General Instructions</h2>
+        <ul>
+            <li>Papers violating formatting guidelines may be rejected</li>
+            <li>Submissions must be original, unpublished work not under review elsewhere</li>
+            <li>Simultaneous submissions to other conferences or journals are prohibited</li>
+            <li>All manuscripts must be written in English and prepared as a PDF document</li>
+            <li>Papers should strictly adhere to the IEEE two-column format with 10pt font size</li>
+            <li>The page limit is six (6) pages. An additional two pages are allowed with extra charges as specified</li>
+            <li>All figures, tables, and references must fit within the page limit</li>
+            <li>Papers will be reviewed based on originality, significance, technical quality, and clarity</li>
+            <li>The decision to accept or reject a paper rests with the Technical Program Committee</li>
+            <li>Accepted papers must address reviewers' comments and meet final submission requirements</li>
+            <li>The Conference Chair reserves the right to exclude papers not presented or meeting guidelines from the proceedings</li>
+            <li>All submissions should be made via Microsoft CMT</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>IEEE E-Copyright Process Document</h2>
+        <h3>Final Submission with IEEE Xplore®-Compatible PDFs</h3>
+        <a href="assets/ieee-copyright-process.pdf" class="download-button" download="ieee-copyright-process.pdf">Download Here</a>
+        <ul>
+            <li>Papers of acceptable quality presented at the conference will be submitted to IEEE Xplore for potential inclusion</li>
+            <li>Accepted papers must be presented by at least one author. Authors must complete paid registration to upload the final IEEE-compliant version of their paper</li>
+            <li>Failure to register or present the paper will result in removal from the conference program and proceedings</li>
+            <li>No refunds will be provided for cancellations, but substitutions are allowed before the event</li>
+        </ul>
+    </div>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const spans = hamburger.querySelectorAll('span');
+            
+            spans[0].style.transform = navLinks.classList.contains('active') 
+                ? 'rotate(45deg) translate(5px, 8px)' 
+                : 'none';
+            
+            spans[1].style.opacity = navLinks.classList.contains('active') 
+                ? '0' 
+                : '1';
+            
+            spans[2].style.transform = navLinks.classList.contains('active') 
+                ? 'rotate(-45deg) translate(5px, -8px)' 
+                : 'none';
+        });
+    </script>
+</body>
+</html>
