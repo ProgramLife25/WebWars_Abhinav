@@ -36,7 +36,7 @@ To run the project locally, follow these steps:
    ```
 2. Navigate to the project directory:
    ```sh
-   cd iccsai-2025-website
+   cd <index.html> path
    ```
 3. Open the `index.html` file in a browser
 
