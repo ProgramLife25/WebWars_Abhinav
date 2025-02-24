@@ -49,7 +49,7 @@ To run the project locally, follow these steps:
 
 This project was created as part of the WebWars competition. Contributions and suggestions are always welcome.
 
-🌐 **Live Demo** https://iccsai-71b08wnyz-abhinav-tyagis-projects-e3d821d4.vercel.app
+🌐 **Live Demo** https://iccsai-95bxlqjrp-abhinav-tyagis-projects-e3d821d4.vercel.app/Registration.html
 
 Simply open the website in a browser to explore the ICCSAI 2025 details.
 
