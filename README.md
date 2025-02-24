@@ -49,10 +49,6 @@ To run the project locally, follow these steps:
 
 This project was created as part of the WebWars competition. Contributions and suggestions are always welcome.
 
-## License
-
-This project is open-source and free to use for educational and non-commercial purposes.
-
 🌐 **Live Demo** https://iccsai-84li8x4ut-abhinav-tyagis-projects-e3d821d4.vercel.app/
 
 Simply open the website in a browser to explore the ICCSAI 2025 details.
@@ -61,17 +57,8 @@ Scroll down to view animations and important event timelines.
 
 ## 🎖 Acknowledgments
 
-We would like to thank the **WebWars competition organizers** for providing this opportunity to showcase our skills. A special thanks to our **mentors, teammates, and everyone** who contributed ideas and support throughout the development process.
-
-We would like to thank the WebWars competition organizers for providing this opportunity to showcase our skills. A special thanks to our mentors, teammates, and everyone who contributed ideas and support throughout the development process.
+I would like to thank the **WebWars competition organizers** for providing this opportunity to showcase our skills.
 
 ## 📬 Contact
 
-For any queries or feedback, feel free to reach out to the team behind this project.
-
-For any queries or feedback, feel free to reach out to the team behind this project.
-
----
-
-**WebWars | ICCSAI 2025 Website**
-
+For any queries or feedback, feel free to reach out to me
