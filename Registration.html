@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conference Registration</title>
+    <title>ICCSAI-2025 | Payment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -11,217 +12,196 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+        
+        :root {
+            --primary: #0d6efd;
+            --primary-dark: #0b5ed7;
+            --secondary: #2c5282;
+            --light-bg: #f8f9fa;
+            --border: #e2e8f0;
+            --text-dark: #333;
+            --text-muted: #718096;
+        }
+        
         .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  background-color: rgb(255, 255, 255);
-}
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.logo img {
-  width: 40px;
-  height: 40px;
-}
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
 
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-}
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-dark);
+        }
 
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-  align-items: center; /* Center items vertically */
-}
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
 
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-size: 1rem;
-  position: relative;
-  padding: 5px 0;
-  transition: color 0.3s ease;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #0d6efd;
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-.nav-links a:hover {
-  color: #0d6efd;
-}
-
-.nav-links a.active {
-  color: #0d6efd;
-}
-
-.nav-links a.active::after {
-  width: 100%;
-  background-color: #0d6efd;
-}
-
-.submit-btn {
-  background-color: #0d6efd;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.submit-btn:hover {
-  background-color: #0b5ed7;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(13, 110, 253, 0.2);
-}
-
-.hamburger {
-  display: none;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0.5rem;
-}
-
-.hamburger span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  margin: 5px 0;
-  transition: all 0.3s ease;
-  z-index: 1000;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-      display: block;
-      z-index: 1000;
-  }
-
-  .nav-links {
-      display: none;
-      position: absolute;
-      top: 70px;
-      left: 0;
-      right: 0;
-      flex-direction: column;
-      background-color: white;
-      padding: 1.5rem;
-      gap: 1.5rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      text-align: center;
-      z-index: 1000;
-  }
-
-  .nav-links.active {
-      display: flex;
-  }
-
-  .nav-links li {
-      width: 100%;
-  }
-
-  .nav-links a {
-      display: block;
-      padding: 10px 0;
-      font-size: 1.1rem;
-  }
-
-  .submit-btn {
-      margin-top: 1rem;
-      width: 100%;
-      max-width: 300px;
-  }
-
-  /* Fade in animation for mobile menu items */
-  .nav-links.active li {
-      animation: fadeIn 0.5s ease forwards;
-      opacity: 0;
-  }
-
-  @keyframes fadeIn {
-      from {
-          opacity: 0;
-          transform: translateY(-10px);
-      }
-      to {
-          opacity: 1;
-          transform: translateY(0);
-      }
-  }
-
-  /* Add delay for each menu item */
-  .nav-links.active li:nth-child(1) { animation-delay: 0.1s; }
-  .nav-links.active li:nth-child(2) { animation-delay: 0.2s; }
-  .nav-links.active li:nth-child(3) { animation-delay: 0.3s; }
-  .nav-links.active li:nth-child(4) { animation-delay: 0.4s; }
-  .nav-links.active li:nth-child(5) { animation-delay: 0.5s; }
-  .nav-links.active li:nth-child(6) { animation-delay: 0.6s; }
-  .nav-links.active li:nth-child(7) { animation-delay: 0.7s; }
-}
-
-        a {
+        .nav-links a {
             text-decoration: none;
+            color: var(--text-dark);
+            font-size: 1rem;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+            background-color: var(--primary);
+        }
+
+        .submit-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(13, 110, 253, 0.2);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-dark);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
         }
 
         body {
-            background-color: #ffffff;
-            padding: 2rem;
+            background-color: #f5f7fa;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
         }
 
         .container {
             max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 3rem;
+            padding: 0 1.5rem;
         }
 
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
+        .payment-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 2rem;
         }
 
         .card {
             background-color: white;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 1.5rem;
             margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         }
 
         .card h2 {
-            color: #2c5282;
-            margin-bottom: 1rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
             font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2 i {
+            color: var(--primary);
+        }
+
+        .card-header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         table {
@@ -233,71 +213,403 @@
         th, td {
             padding: 1rem;
             text-align: left;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid var(--border);
         }
 
         th {
-            background-color: #f7fafc;
+            background-color: var(--light-bg);
             font-weight: 600;
-            color: #4a5568;
+            color: var(--secondary);
         }
 
         tr:hover {
-            background-color: #f7fafc;
+            background-color: var(--light-bg);
         }
 
         .note {
             font-size: 0.9rem;
-            color: #666;
-            margin-top: 1rem;
+            color: var(--text-muted);
+            margin-top: 1.5rem;
             padding: 1rem;
-            background-color: #f8f9fa;
-            border-radius: 6px;
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
         }
 
         .account-details {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
         }
 
         .detail-item {
             padding: 1rem;
-            background-color: #f8f9fa;
-            border-radius: 6px;
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .detail-item:hover {
+            background-color: #edf2fd;
+            transform: translateY(-3px);
         }
 
         .detail-item strong {
             display: block;
             margin-bottom: 0.5rem;
-            color: #2c5282;
+            color: var(--secondary);
+            font-size: 0.9rem;
         }
 
-        .submit-button {
-            display: block;
+        .detail-item span {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        .qr-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .qr-code {
             width: 200px;
-            margin: 2rem auto 0;
+            height: 200px;
+            margin-bottom: 1.5rem;
+            padding: 10px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-steps {
+            margin: 2rem 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .payment-steps li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .payment-steps li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .step-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .payment-method {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem;
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1 1 150px;
+        }
+
+        .payment-method:hover {
+            background-color: #edf2fd;
+            transform: translateY(-3px);
+        }
+
+        .payment-method i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .payment-method span {
+            font-weight: 500;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             padding: 1rem 2rem;
-            background-color: #0d6efd;
+            background-color: var(--primary);
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            text-decoration: none;
         }
 
-        .submit-button:hover {
-            background-color: #2c5282;
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(13, 110, 253, 0.25);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--light-bg);
+            color: var(--primary-dark);
+            box-shadow: 0 6px 15px rgba(13, 110, 253, 0.1);
+        }
+
+        .confirmation-message {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: #e9f7ef;
+            border-radius: 8px;
+            border-left: 4px solid #2ecc71;
+        }
+
+        .confirmation-message h3 {
+            color: #27ae60;
+            margin-bottom: 0.5rem;
+        }
+
+        .confirmation-message p {
+            color: #2c3e50;
+        }
+
+        .help-section {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .help-section h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .contact-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .contact-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-option i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .contact-option span {
+            font-weight: 500;
+        }
+
+        .contact-option p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 992px) {
+            .payment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .qr-section {
+                order: -1;
+                margin-bottom: 2rem;
+            }
         }
 
         @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+                z-index: 1000;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: white;
+                padding: 1.5rem;
+                gap: 1.5rem;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                text-align: center;
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 10px 0;
+                font-size: 1.1rem;
+            }
+
+            .submit-btn {
+                margin-top: 1rem;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .nav-links.active li {
+                animation: fadeIn 0.5s ease forwards;
+                opacity: 0;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .nav-links.active li:nth-child(1) { animation-delay: 0.1s; }
+            .nav-links.active li:nth-child(2) { animation-delay: 0.2s; }
+            .nav-links.active li:nth-child(3) { animation-delay: 0.3s; }
+            .nav-links.active li:nth-child(4) { animation-delay: 0.4s; }
+            .nav-links.active li:nth-child(5) { animation-delay: 0.5s; }
+            .nav-links.active li:nth-child(6) { animation-delay: 0.6s; }
+            .nav-links.active li:nth-child(7) { animation-delay: 0.7s; }
+
             body {
-                padding: 1rem;
+                padding: 0;
             }
 
             .container {
-                padding: 1rem;
+                padding: 0 1rem;
+            }
+
+            .page-header {
+                padding: 2rem 1rem;
             }
 
             table {
@@ -305,6 +617,109 @@
                 overflow-x: auto;
             }
         }
+
+        /* Timeline Styles */
+        .timeline-container {
+            margin: 2rem 0;
+            padding: 0;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            max-width: 100%;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background-color: #e2e8f0;
+            top: 25px;
+            left: 0;
+            border-radius: 10px;
+        }
+
+        .timeline-step {
+            position: relative;
+            z-index: 1;
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(13, 110, 253, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-step:hover .step-icon {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(13, 110, 253, 0.3);
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            max-width: 200px;
+            padding: 0 0.5rem;
+        }
+
+        .timeline-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background-color: var(--primary);
+            top: 25px;
+            left: 50%;
+            z-index: -1;
+        }
+
+        .timeline-step.completed .step-icon {
+            background-color: #38a169;
+        }
+
+        .timeline-step.active .step-icon {
+            background-color: var(--primary);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.5);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(13, 110, 253, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
+            }
+        }
+
+        /* End of Timeline Styles */
     </style>
 </head>
 <body>
@@ -321,92 +736,242 @@
         </button>
     
         <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="guidelines.html">Guidelines</a></li>
             <li><a href="members.html">Members</a></li>
             <li><a href="speakers.html">Speakers</a></li>
             <li><a href="https://ieeexplore.ieee.org/xpl/conhome/10420826/proceeding">ICCSAI-2023</a></li>
-            <li><a href="Registration.html">Registration</a></li>
+            <li><a href="Registration.html" class="active">Registration</a></li>
+            <li><a href="IEEE.html">IEEE</a></li>
             <li><a href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FICCSAI2025">
               <button class="submit-btn">Submit Paper</button>
             </a></li>
         </ul>
     </nav>
-    <div class="container">
-        <h1>Conference Registration</h1>
 
-        <div class="card">
-            <h2>Registration Types</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Registration Type</th>
-                        <th>Country</th>
-                        <th>IEEE Member</th>
-                        <th>Non-IEEE Member</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Regular Author</td>
-                        <td>Indian<br>Foreigner</td>
-                        <td>7,000 INR<br>350 USD</td>
-                        <td>9,000 INR<br>400 USD</td>
-                    </tr>
-                    <tr>
-                        <td>Student Author</td>
-                        <td>Indian<br>Foreigner</td>
-                        <td>5,000 INR<br>200 USD</td>
-                        <td>6,000 INR<br>300 USD</td>
-                    </tr>
-                    <tr>
-                        <td>Industry</td>
-                        <td>Indian<br>Foreigner</td>
-                        <td>7,000 INR<br>350 USD</td>
-                        <td>9,000 INR<br>400 USD</td>
-                    </tr>
-                    <tr>
-                        <td>Attendee</td>
-                        <td>Indian<br>Foreigner</td>
-                        <td>3,000 INR<br>50 USD</td>
-                        <td>3,500 INR<br>100 USD</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="note">
-                * Extra page charge of ₹1000/- INR per page Indian author and $ 50 per page International author will be chargeable to the author's during registration process.
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>Account Details</h2>
-            <div class="account-details">
-                <div class="detail-item">
-                    <strong>Name of Account</strong>
-                    <span>GU Conferences</span>
-                </div>
-                <div class="detail-item">
-                    <strong>Account Number</strong>
-                    <span>6717000100025845</span>
-                </div>
-                <div class="detail-item">
-                    <strong>IFSC Code</strong>
-                    <span>PUNB0671700</span>
-                </div>
-                <div class="detail-item">
-                    <strong>Bank Name</strong>
-                    <span>Punjab National Bank, Noida</span>
-                </div>
-                <div class="detail-item">
-                    <strong>SWIFT CODE</strong>
-                    <span>PUNBINBBMSN</span>
-                </div>
-            </div>
-        </div>
-        <a href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FICCSAI2025">
-            <button class="submit-button" onclick="submitPaper()">Submit Your Paper</button>
-        </a>
+    <div class="page-header">
+        <h1>Conference Payment Portal</h1>
+        <p>Complete your registration for ICCSAI-2025 with our secure payment system</p>
     </div>
+    <div class="container">
+        <div class="card">
+            <h2><i class="fas fa-clipboard-list"></i> Payment Process</h2>
+            <div class="timeline-container">
+                <div class="timeline">
+                    <div class="timeline-step completed">
+                        <div class="step-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="step-title">Select Category</div>
+                        <div class="step-desc">Choose your registration type</div>
+                    </div>
+                    <div class="timeline-step active">
+                        <div class="step-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="step-title">Make Payment</div>
+                        <div class="step-desc">Pay using bank transfer or UPI</div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-icon">
+                            <i class="fas fa-file-upload"></i>
+                        </div>
+                        <div class="step-title">Submit Proof</div>
+                        <div class="step-desc">Upload payment confirmation</div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="step-title">Confirmation</div>
+                        <div class="step-desc">Receive registration confirmation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="container">
+        <div class="payment-grid">
+            <div class="main-content">
+                <div class="card">
+                    <h2><i class="fas fa-credit-card"></i> Registration Fees</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Registration Type</th>
+                                <th>Country</th>
+                                <th>IEEE Member</th>
+                                <th>Non-IEEE Member</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Regular Author</td>
+                                <td>Indian<br>Foreigner</td>
+                                <td>7,000 INR<br>350 USD</td>
+                                <td>9,000 INR<br>400 USD</td>
+                            </tr>
+                            <tr>
+                                <td>Student Author</td>
+                                <td>Indian<br>Foreigner</td>
+                                <td>5,000 INR<br>200 USD</td>
+                                <td>6,000 INR<br>300 USD</td>
+                            </tr>
+                            <tr>
+                                <td>Industry</td>
+                                <td>Indian<br>Foreigner</td>
+                                <td>7,000 INR<br>350 USD</td>
+                                <td>9,000 INR<br>400 USD</td>
+                            </tr>
+                            <tr>
+                                <td>Attendee</td>
+                                <td>Indian<br>Foreigner</td>
+                                <td>3,000 INR<br>50 USD</td>
+                                <td>3,500 INR<br>100 USD</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="note">
+                        <i class="fas fa-info-circle"></i> Extra page charge of ₹1000/- INR per page for Indian authors and $50 per page for International authors will be charged during the registration process.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2><i class="fas fa-university"></i> Banking Details</h2>
+                    <div class="account-details">
+                        <div class="detail-item">
+                            <strong>Account Name</strong>
+                            <span>GU Conferences</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Account Number</strong>
+                            <span>6717000100025845</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>IFSC Code</strong>
+                            <span>PUNB0671700</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Bank Name</strong>
+                            <span>Punjab National Bank, Noida</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>SWIFT CODE</strong>
+                            <span>PUNBINBBMSN</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2><i class="fas fa-money-bill-wave"></i> Payment Methods</h2>
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <i class="fas fa-university"></i>
+                            <span>Bank Transfer</span>
+                        </div>
+                        <div class="payment-method">
+                            <i class="fas fa-qrcode"></i>
+                            <span>UPI</span>
+                        </div>
+                        <div class="payment-method">
+                            <i class="far fa-credit-card"></i>
+                            <span>Credit Card</span>
+                        </div>
+                        <div class="payment-method">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Debit Card</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-container">
+                    <a href="#" class="btn btn-secondary" style="margin-right: 15px;">
+                        <i class="fas fa-upload"></i> Upload Payment Proof
+                    </a>
+                    <a href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FICCSAI2025" class="btn">
+                        <i class="fas fa-file-alt"></i> Submit Your Paper
+                    </a>
+                </div>
+            </div>
+
+            <div class="side-content">
+                <div class="qr-section">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--secondary);">Scan to Pay</h3>
+                    <img src="assets/upi.png" alt="Payment QR Code" class="qr-code">
+                    <p style="text-align: center; margin-bottom: 1rem; color: var(--text-muted);">
+                        <strong>UPI ID:</strong> guconferences@pnb
+                    </p>
+                    <div style="text-align: center; color: var(--text-muted);">
+                        <p style="margin-bottom: 0.5rem;">Scan this QR code with any UPI app</p>
+                        <p>Google Pay, PhonePe, Paytm, etc.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2><i class="fas fa-headset"></i> Need Help?</h2>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">If you have any questions or need assistance with your payment, please contact our support team:</p>
+                    <div style="margin-bottom: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                            <i class="fas fa-envelope" style="color: var(--primary);"></i>
+                            <strong>Email:</strong>
+                        </div>
+                        <p style="margin-left: 25px; color: var(--text-muted);">iccsai2025@gmail.com</p>
+                    </div>
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                            <i class="fas fa-phone" style="color: var(--primary);"></i>
+                            <strong>Phone:</strong>
+                        </div>
+                        <p style="margin-left: 25px; color: var(--text-muted);">+91 9876543210</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="confirmation-message">
+            <h3><i class="fas fa-check-circle"></i> Registration Benefits</h3>
+            <p>Your registration includes conference access, proceedings, lunch, and refreshments throughout the event.</p>
+        </div>
+
+        <div class="help-section">
+            <h3>Questions? Contact Us</h3>
+            <div class="contact-options">
+                <div class="contact-option">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                    <p>iccsai2025@gmail.com</p>
+                </div>
+                <div class="contact-option">
+                    <i class="fas fa-phone"></i>
+                    <span>Phone</span>
+                    <p>+91 9876543210</p>
+                </div>
+                <div class="contact-option">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Address</span>
+                    <p>Galgotias University, Greater Noida</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Guidelines</a>
+                <a href="#">Speakers</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="copyright">© 2025 ICCSAI Conference. All Rights Reserved. Organized by Galgotias University.</p>
+        </div>
+    </footer>
 
     <script>
         const hamburger = document.querySelector('.hamburger');
@@ -427,6 +992,16 @@
             spans[2].style.transform = navLinks.classList.contains('active') 
                 ? 'rotate(-45deg) translate(5px, -8px)' 
                 : 'none';
+        });
+
+        // Simulated payment form validation
+        document.querySelectorAll('.payment-method').forEach(method => {
+            method.addEventListener('click', function() {
+                document.querySelectorAll('.payment-method').forEach(m => {
+                    m.style.border = 'none';
+                });
+                this.style.border = '2px solid #0d6efd';
+            });
         });
     </script>
 </body>
